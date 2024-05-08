@@ -1,0 +1,11 @@
+channels:
+  - conda-forge
+dependencies:
+  - python==3.11.8
+  - pip==24.0
+  - pip:
+    - jax==0.4.24
+    - jaxlib==0.4.24
+    - flax==0.8.0
+    - ml_collections==0.1.1
+    - wandb==0.16.6
