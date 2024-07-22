@@ -1,3 +1,37 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm", "dynamic-versioning"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name =  "{{cookiecutter.project_slug}}"
+description = "{{cookiecutter.project_short_description}}"
+authors = [{name = "{{cookiecutter.full_name}}", email = "{{cookiecutter.email}}"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+homepage = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}"
+keywords = []
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+requires-python = ">=3.9"
+dynamic = ["version", "dependencies", "optional-dependencies"]
+
+[tool.setuptools.dynamic]
+version = {attr = "{{cookiecutter.project_slug}}.__init__.__version__"}
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.dynamic.optional-dependencies]
+dev = { file = ["requirements-dev.txt"] }
+
+[tool.setuptools]
+packages = ["{{cookiecutter.project_slug}}"]
+
 [tool.ruff]
 line-length = 120
 
