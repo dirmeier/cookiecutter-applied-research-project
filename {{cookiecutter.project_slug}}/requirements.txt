@@ -1,7 +1,0 @@
-jax
-jaxlib
-flax
-ml_collections
-optax
-tfp-nightly[jax]
-wandb

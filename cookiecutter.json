@@ -1,10 +1,10 @@
 {
-  "full_name": "Simon Dirmeier",
-  "email": "sfyrbnd @ pm me",
-  "github_username": "dirmeier",
-  "project_name": "Applied research project template",
+  "full_name": "First name and last name",
+  "email": "mail@domain.com",
+  "github_username": "githandle",
+  "project_readme_title": "Applied research project template",
   "project_short_description": "A project that does nothing so far",
-  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_slug": "Something short like 'flbi'",
   "pypi_username": "{{ cookiecutter.github_username }}",
   "version": "0.0.1",
   "_copy_without_render": [
