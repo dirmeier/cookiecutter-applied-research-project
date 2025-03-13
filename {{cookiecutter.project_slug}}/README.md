@@ -10,7 +10,8 @@
 
 This repository contains the Python code for reproducing the results in the paper
 
-    Simon Dirmeier and Fernando Perez-Cruz. Diffusion models for probabilistic programming. NeurIPS Workshop on Diffusion models, 2023. 
+> Simon Dirmeier and Fernando Perez-Cruz. Diffusion models for probabilistic programming. NeurIPS Workshop on Diffusion models, 2023.
+> [arXiv](https://arxiv.org/abs/2311.00474)
 
 The folder structure is as follows (delete/modify me):
 - `configs`: collection of `ml_collections config files specifying hyperparameters,
