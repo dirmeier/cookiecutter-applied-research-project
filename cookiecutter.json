@@ -2,9 +2,9 @@
   "full_name": "First name and last name",
   "email": "mail@domain.com",
   "github_username": "githandle",
-  "project_readme_title": "Applied research project template",
-  "project_short_description": "A project that does nothing so far",
   "project_slug": "Something short like 'flbi'",
+  "project_readme_title": "{{ cookiecutter.project_slug }}",
+  "project_short_description": "{{ cookiecutter.project_slug }}",
   "pypi_username": "{{ cookiecutter.github_username }}",
   "version": "0.0.1",
   "_copy_without_render": [

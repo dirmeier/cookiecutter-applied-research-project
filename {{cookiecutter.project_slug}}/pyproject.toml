@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools", "setuptools-scm", "dynamic-versioning"]
+requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,41 +8,44 @@ description = "{{cookiecutter.project_short_description}}"
 authors = [{name = "{{cookiecutter.full_name}}", email = "{{cookiecutter.email}}"}]
 readme = "README.md"
 license = {file = "LICENSE"}
-homepage = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}"
+keywords = []
 classifiers = [
     "Development Status :: 1 - Planning",
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: Apache Software License",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3",    
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
-requires-python = ">=3.10"
-dynamic = ["version", "dependencies", "optional-dependencies"]
+requires-python = ">=3.11"
+dynamic = ["version"]
+
+[project.optional-dependencies]
+all = []
+
+[project.urls]
+Homepage = "https://github.com/{{ cookiecutter.github_username }}/{{cookiecutter.project_slug}}"
 
 [tool.setuptools]
 packages = ["{{cookiecutter.project_slug}}"]
 
 [tool.setuptools.dynamic]
 version = {attr = "{{cookiecutter.project_slug}}.__init__.__version__"}
-dependencies = {file = ["requirements.txt"]}
-
-[tool.setuptools.dynamic.optional-dependencies]
-dev = { file = ["requirements-dev.txt"] }
 
 [tool.bandit]
-skips = ["B101"]
+skips = ["B101", "B310"]
 
 [tool.mypy]
 show_error_codes = true
 no_implicit_optional = true
 
 [tool.ruff]
-line-length = 120
+indent-width = 2
+line-length = 80
+exclude = ["*_test.py", "docs/**"]
 
 [tool.ruff.lint]
-select = ["E4", "E7", "E9", "F"]
+select = ["ANN", "D", "E", "F", "W", "I001"]
 extend-select = [
   "UP", "I", "PL", "S"
 ]
@@ -50,3 +53,12 @@ ignore = ["S301", "PLR0913", "S101", "PLR2004", "S603", "S607"]
 
 [tool.ruff.lint.pydocstyle]
 convention= 'google'
+
+[tool.uv]
+upgrade-package = ["jax-ai-stack"]
+dev-dependencies = [
+    "gitlint",
+    "jupyter",
+    "pre-commit",    
+    "ruff",
+]
