@@ -1,4 +1,4 @@
-# {{ cookiecutter.project_name }}
+# {{ cookiecutter.project_readme_title }}
 
 [![status](http://www.repostatus.org/badges/latest/concept.svg)](http://www.repostatus.org/#concept)
 [![arXiv](https://img.shields.io/badge/arXiv-2311.00474-b31b1b.svg)](https://arxiv.org/abs/2311.00474)
@@ -21,7 +21,7 @@ The folder structure is as follows (delete/modify me):
 - `experiments`: different experimental classes, like `MCMCExperiment` and `VIExperiment`, and general code for the concrete data analysis (in which case I'd rename this to `src` or `scripts` or `analysis`)
 - `notebooks`: example notebooks,
 - `results`: outputs of `experiments,
-- `{{cookiecutter.project_slug`: library-ish code and modules that can be used independently of the project experiments (the point is to have the code separated from the the actual analysis, such that people can use it on their data)
+- `{{cookiecutter.project_slug}}`: library-ish code and modules that can be used independently of the project experiments (the point is to have the code separated from the the actual analysis, such that people can use it on their data)
 
 ## Installation
 
@@ -63,7 +63,7 @@ or use the Dockerfile like this:
 
 ```shell
 docker run -v <<some path>>:/mnt \
-  {{ cookiecutter.project_slug } /  
+  {{ cookiecutter.project_slug }} /  
   --config=/mnt/configs/<<config.py>> \
   --data_config=/mnt/data_and_models/mixture_model.py \
   --workdir=/mnt/results/

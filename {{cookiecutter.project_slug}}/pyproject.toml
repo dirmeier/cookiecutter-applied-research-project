@@ -21,6 +21,9 @@ classifiers = [
 requires-python = ">=3.10"
 dynamic = ["version", "dependencies", "optional-dependencies"]
 
+[tool.setuptools]
+packages = ["{{cookiecutter.project_slug}}"]
+
 [tool.setuptools.dynamic]
 version = {attr = "{{cookiecutter.project_slug}}.__init__.__version__"}
 dependencies = {file = ["requirements.txt"]}
@@ -28,8 +31,8 @@ dependencies = {file = ["requirements.txt"]}
 [tool.setuptools.dynamic.optional-dependencies]
 dev = { file = ["requirements-dev.txt"] }
 
-[tool.setuptools]
-packages = ["{{cookiecutter.project_slug}}"]
+[tool.bandit]
+skips = ["B101"]
 
 [tool.mypy]
 show_error_codes = true
