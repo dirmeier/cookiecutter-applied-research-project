@@ -18,6 +18,9 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 requires-python = ">=3.11"
+dependencies = [
+    "jax-ai-stack",
+]
 dynamic = ["version"]
 
 [project.optional-dependencies]
@@ -25,6 +28,14 @@ all = []
 
 [project.urls]
 Homepage = "https://github.com/{{ cookiecutter.github_username }}/{{cookiecutter.project_slug}}"
+
+[dependency-groups]
+dev = [
+    "gitlint",
+    "jupyter",
+    "pre-commit",
+    "ruff",
+]
 
 [tool.setuptools]
 packages = ["{{cookiecutter.project_slug}}"]
@@ -56,9 +67,3 @@ convention= 'google'
 
 [tool.uv]
 upgrade-package = ["jax-ai-stack"]
-dev-dependencies = [
-    "gitlint",
-    "jupyter",
-    "pre-commit",    
-    "ruff",
-]
